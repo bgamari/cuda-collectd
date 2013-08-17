@@ -1,0 +1,24 @@
+# cuda-collectd
+
+`cuda-collectd` is a `collectd-python` plugin for pushing statistics from
+the `nvidia-smi` utility to collectd.
+
+## installation
+
+While this is somewhat environment specific, the installation procedure
+will likely look something like,
+
+    $ cp cuda_collectd.py /usr/lib/collectd
+
+then adding the following stanza to `collectd.conf`,
+
+    <LoadPlugin python>
+      Globals true
+    </LoadPlugin>
+
+    <Plugin python>
+      ModulePath "/usr/lib/collectd/cuda-collectd"
+      Interactive False
+      Import "cuda_collectd"
+    </Plugin>
+
