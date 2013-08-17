@@ -17,7 +17,7 @@ then adding the following stanza to `collectd.conf`,
     </LoadPlugin>
 
     <Plugin python>
-      ModulePath "/usr/lib/collectd/cuda-collectd"
+      ModulePath "/usr/lib/collectd"
       Interactive False
       Import "cuda_collectd"
     </Plugin>
