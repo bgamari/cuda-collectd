@@ -21,7 +21,7 @@ def read(data=None):
                             values=[float(gpu.find('temperature/gpu_temp').text.split()[0])])
 
                 vl.dispatch(type='memory', type_instance='used',
-                            values=[float(1e6 * gpu.find('memory_usage/used').text.split()[0])])
+                            values=[1e6 * float(gpu.find('memory_usage/used').text.split()[0])])
 
 collectd.register_read(read)
 
